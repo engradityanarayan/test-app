@@ -1,15 +1,15 @@
-import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar, IonItem, IonLabel, IonButton, IonDatetime  } from '@ionic/react';
-import './Tab1.css';
+import { IonImg, IonContent, IonHeader, IonPage, IonTitle, IonToolbar, IonItem, IonLabel, IonButton, IonDatetime  } from '@ionic/react';
 
-const Tab1: React.FC = () => {
+const CheckerDashboard: React.FC = () => {
   return (
     <IonPage>
       <IonHeader>
         <IonToolbar>
-          <IonTitle>Before punch in</IonTitle>
+          <IonTitle>Checker Dashboard</IonTitle>
         </IonToolbar>
       </IonHeader>
       <IonContent fullscreen>
+        <IonImg src="assets/images/header.jpg" alt="HEADER" style={{ margin: '10px' }}></IonImg>
         <IonButton expand="block">Emp ID, Emp Name</IonButton>
         <IonItem>
           <IonButton size="large" style={{ margin: '10px' }}>Shift details</IonButton>
@@ -57,4 +57,4 @@ const Tab1: React.FC = () => {
   );
 };
 
-export default Tab1;
+export default CheckerDashboard;

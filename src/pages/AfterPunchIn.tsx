@@ -1,20 +1,21 @@
 import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar, IonItem, IonLabel, IonButton, IonDatetime  } from '@ionic/react';
-import './Tab1.css';
 
-const Tab1: React.FC = () => {
+
+const AfterPunchIn: React.FC = () => {
   return (
     <IonPage>
       <IonHeader>
         <IonToolbar>
-          <IonTitle>Before punch in</IonTitle>
+          <IonTitle>After punch in</IonTitle>
         </IonToolbar>
       </IonHeader>
       <IonContent fullscreen>
         <IonButton expand="block">Emp ID, Emp Name</IonButton>
         <IonItem>
           <IonButton size="large" style={{ margin: '10px' }}>Shift details</IonButton>
-          <IonButton color="success" size="large" style={{ margin: '10px' }}>Punch In</IonButton>
+          <IonButton color="danger" size="large" style={{ margin: '10px' }}>Punch Out</IonButton>
         </IonItem>
+        <IonButton expand="block" color="secondary">Timer running</IonButton>
 
         <IonItem>
             {/* <IonButton  color="tertiary" className="ion-text-wrap" size="large" style={{ margin: '80px' }}>
@@ -57,4 +58,4 @@ const Tab1: React.FC = () => {
   );
 };
 
-export default Tab1;
+export default AfterPunchIn;

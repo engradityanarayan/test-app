@@ -11,6 +11,12 @@ import {
 } from '@ionic/react';
 import { IonReactRouter } from '@ionic/react-router';
 import { ellipse, square, triangle } from 'ionicons/icons';
+import Login from './pages/Login';
+import PunchInverify from './pages/PunchInverify';
+import AfterPunchIn from './pages/AfterPunchIn';
+import CheckerDashboard from './pages/CheckerDashboard';
+
+
 import Tab1 from './pages/Tab1';
 import Tab2 from './pages/Tab2';
 import Tab3 from './pages/Tab3';
@@ -33,6 +39,7 @@ import '@ionic/react/css/display.css';
 
 /* Theme variables */
 import './theme/variables.css';
+import PucnhInVerify from './pages/PunchInverify';
 
 setupIonicReact();
 
@@ -41,8 +48,17 @@ const App: React.FC = () => (
     <IonReactRouter>
       <IonTabs>
         <IonRouterOutlet>
+          <Route exact path="/login">
+            <Login />
+          </Route>
           <Route exact path="/tab1">
             <Tab1 />
+          </Route>
+          <Route exact path="/PucnhInVerify">
+            <PucnhInVerify />
+          </Route>
+          <Route exact path="/afterPunchIn">
+            <AfterPunchIn />
           </Route>
           <Route exact path="/tab2">
             <Tab2 />
@@ -50,23 +66,43 @@ const App: React.FC = () => (
           <Route path="/tab3">
             <Tab3 />
           </Route>
+          {/* <Route path="/checkerDashboard">
+            <CheckerDashboard />
+          </Route> */}
           <Route exact path="/">
             <Redirect to="/tab1" />
           </Route>
         </IonRouterOutlet>
         <IonTabBar slot="bottom">
+          <IonTabButton tab="login" href="/login">
+            <IonIcon aria-hidden="true" icon={square} />
+            <IonLabel>Login</IonLabel>
+          </IonTabButton>
           <IonTabButton tab="tab1" href="/tab1">
-            <IonIcon aria-hidden="true" icon={triangle} />
-            <IonLabel>Tab 1</IonLabel>
+            <IonIcon aria-hidden="true" icon={square} />
+            <IonLabel>Before Punch In</IonLabel>
+          </IonTabButton>
+          <IonTabButton tab="PucnhInVerify" href="/PucnhInVerify">
+            <IonIcon aria-hidden="true" icon={square} />
+            <IonLabel>Verify Punch In</IonLabel>
+          </IonTabButton>
+          
+          <IonTabButton tab="afterPunchIn" href="/afterPunchIn">
+            <IonIcon aria-hidden="true" icon={square} />
+            <IonLabel>After Punch In</IonLabel>
           </IonTabButton>
           <IonTabButton tab="tab2" href="/tab2">
-            <IonIcon aria-hidden="true" icon={ellipse} />
-            <IonLabel>Tab 2</IonLabel>
+            <IonIcon aria-hidden="true" icon={square} />
+            <IonLabel>Ticket</IonLabel>
           </IonTabButton>
           <IonTabButton tab="tab3" href="/tab3">
             <IonIcon aria-hidden="true" icon={square} />
-            <IonLabel>Tab 3</IonLabel>
+            <IonLabel>Leave</IonLabel>
           </IonTabButton>
+          {/* <IonTabButton tab="checkerDashboard" href="/checkerDashboard">
+            <IonIcon aria-hidden="true" icon={square} />
+            <IonLabel>Checker Dashboard</IonLabel>
+          </IonTabButton> */}
         </IonTabBar>
       </IonTabs>
     </IonReactRouter>
